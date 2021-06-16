@@ -58,8 +58,17 @@
 
 /*== media queries ===*/
 
-@media(max-width: 767px) {
- html {
-     font-size: 15px;
- }
+@media (min-width: 1300px) {
+    .container {
+        max-width: 1450px;
+    }
+}
+
+@media(max-width: 991px) {
+    h1 {
+        font-size: 2rem;
+    }
+    html {
+        font-size: 15px;
+    }
 }

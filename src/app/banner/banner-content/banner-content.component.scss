@@ -8,8 +8,11 @@
         z-index: 1;
         left: 0;
         bottom: 0;
-        margin-top: -3rem;
         background: rgba(#254a7a,0.7);
+        @media(min-width: 992px) {
+            position: absolute;
+            margin-top: -3rem;
+        }
     }
     img {
         top: 0;

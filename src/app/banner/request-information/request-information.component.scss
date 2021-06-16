@@ -7,6 +7,15 @@
             background-color: $primary;
             padding: 15px;
             font-size: 19px;
+            position: relative;
+            &:after {
+                position: absolute;
+                content: '';
+                bottom: -10px;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid $primary;
+            }
         }
     }
     &-control {
