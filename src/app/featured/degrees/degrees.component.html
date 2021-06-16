@@ -1,0 +1,33 @@
+<section class="container py-5">
+    <div class="px-xl-4">
+        <h2>Featured Degrees at UHD</h2>
+        <p>UHD’s high-caliber undergraduate and graduate degree programs were designed with your busy life in mind. Whether
+            you’re returning to finish your degree or launching an entirely new direction, you’ll find the flexibility and
+            support you need here.</p>
+    </div>
+  <tabset type="pills">
+    <ng-container *ngFor="let degree of degrees">
+      <tab heading="{{degree}}" (selectTab)="selectTabContnet($event)">
+        <div class="position-relative tab-content-heading my-5 pb-1">
+          <img class="position-absolute w-100 h-100" src="/assets/images/bg-pattern.png" alt="">
+          <h2 class="text-center text-white position-relative py-4 px-3 font-weight-medium">WHY CHOOSE UHD
+            {{tab | uppercase}} ?</h2>
+        </div>
+        <div class="px-xl-4">
+          <ng-container *ngIf="tab === 'Business'">
+            <app-business></app-business>
+          </ng-container>
+          <ng-container *ngIf="tab === 'Completion'">
+            <app-completion></app-completion>
+          </ng-container>
+          <ng-container *ngIf="tab === 'Criminal Justice'">
+            <app-completion></app-completion>
+          </ng-container>
+          <ng-container *ngIf="tab === 'Education'">
+            <app-completion></app-completion>
+          </ng-container>
+        </div>
+      </tab>
+    </ng-container>
+  </tabset>
+</section>

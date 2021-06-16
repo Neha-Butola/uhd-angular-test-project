@@ -1,0 +1,19 @@
+.banner {
+    min-height: 400px;
+    > .container {
+        z-index: 2;
+    }
+    h1 {
+        padding: 1.5rem 0;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        margin-top: -3rem;
+        background: rgba(#254a7a,0.7);
+    }
+    img {
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}

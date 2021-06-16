@@ -1,0 +1,15 @@
+.btn-primary {
+    background: $secondary !important;
+    border-color: $secondary !important;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    line-height: 1;
+    font: 700 1.25rem "Futura PT", sans-serif;;
+    &:hover {
+        opacity: 0.9;
+    }
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}

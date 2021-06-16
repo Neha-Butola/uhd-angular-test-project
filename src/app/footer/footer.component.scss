@@ -1,0 +1,11 @@
+@import './../../styles/variable';
+
+footer {
+    background: $primary;
+}
+
+.btn-to-top {
+    background: #01224f;
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+}

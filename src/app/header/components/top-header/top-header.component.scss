@@ -1,0 +1,13 @@
+@import './../../../../styles/variable'; 
+
+.title {
+    color: $primary;
+    font-size: 1.875rem;
+    font-family: "futura-pt", serif;
+    a {
+        color: $red;
+    }
+    @media (max-width: 767px) {
+        font-size: 1.2rem;
+    }
+}

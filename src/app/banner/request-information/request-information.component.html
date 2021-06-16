@@ -1,0 +1,69 @@
+<div class="form-wrap">
+  <h2 class="text-white d-flex align-items-center text-uppercase">
+    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37px" height="37px">
+      <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+        d="M21.151,24.682 L19.635,25.342 L21.607,15.336 C21.715,14.784 21.494,14.221 21.038,13.891 C20.583,13.562 19.978,13.529 19.488,13.803 L15.836,15.860 C15.143,16.250 14.899,17.128 15.289,17.821 C15.680,18.514 16.557,18.759 17.249,18.369 L18.179,17.845 L16.281,27.480 C16.177,28.005 16.374,28.545 16.791,28.880 C17.051,29.090 17.370,29.197 17.693,29.197 C17.887,29.197 18.083,29.157 18.267,29.077 L22.300,27.321 C23.029,27.004 23.362,26.155 23.045,25.427 C22.727,24.698 21.879,24.364 21.151,24.682 L21.151,24.682 ZM20.195,11.117 C20.738,11.117 21.264,10.899 21.647,10.516 C22.029,10.134 22.251,9.603 22.251,9.061 C22.251,8.518 22.029,7.987 21.647,7.609 C21.264,7.226 20.733,7.004 20.195,7.004 C19.652,7.004 19.122,7.226 18.740,7.609 C18.357,7.987 18.139,8.518 18.139,9.061 C18.139,9.603 18.357,10.134 18.740,10.516 C19.122,10.899 19.652,11.117 20.195,11.117 ZM18.750,0.320 C8.864,0.320 0.821,8.364 0.821,18.250 C0.821,28.136 8.864,36.179 18.750,36.179 C28.636,36.179 36.680,28.136 36.680,18.250 C36.679,8.364 28.636,0.320 18.750,0.320 ZM18.750,32.889 C10.678,32.889 4.111,26.322 4.111,18.250 C4.111,10.178 10.678,3.610 18.750,3.610 C26.823,3.610 33.390,10.178 33.390,18.250 C33.389,26.322 26.822,32.889 18.750,32.889 Z" />
+    </svg>
+    Request information</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group mb-2">
+      <input formControlName="firstname" type="text" class="form-control" placeholder="First Name*">
+      <small class="error-msg text-danger" *ngIf="form.get('firstname').errors && submitted">
+        The field is required
+      </small>
+    </div>
+    <div class="form-group mb-2">
+      <input formControlName="lastname" type="text" class="form-control" placeholder="Last Name*">
+      <small class="error-msg text-danger" *ngIf="form.get('lastname').errors &&  submitted">
+        The field is required
+      </small>
+    </div>
+    <div class="form-group mb-2">
+      <input formControlName="email" type="email" class="form-control" placeholder="Email Address*" id="email">
+      <small class="text-danger" *ngIf="form.get('email').errors?.required && submitted">Email address
+        is required</small>
+      <small class="text-danger" *ngIf="form.get('email').errors?.email && submitted ">Email address is
+        invalid</small>
+    </div>
+
+    <div class="form-group mb-2">
+      <input formControlName="phonenumber" type="tel" class="form-control" placeholder="Phone Number*" id="email">
+      <small class="text-danger" *ngIf="form.get('phonenumber').errors?.required && submitted">
+        Phone number is required</small>
+      <small class="text-danger" *ngIf="form.get('phonenumber').errors?.pattern && submitted">
+        Enter 10 digit valid number</small>
+        
+    </div>
+
+    <div class="form-group mb-2">
+      <select formControlName="interests" class="form-control">
+        <option value="">Program of Interest*</option>
+        <option value="value1">Value 1</option>
+        <option value="value2">Value 2</option>
+      </select>
+      <small class="error-msg text-danger" *ngIf="form.get('interests').errors && submitted ">
+        The field is required
+      </small>
+    </div>
+
+    <div class="form-group mb-2">
+      <select formControlName="deliverttype" class="form-control">
+        <option value="">Program Delivery Type</option>
+        <option value="urgent">Urgent</option>
+        <option value="normal">Normal</option>
+      </select>
+    </div>
+
+    <div class="form-group mb-2">
+      <select formControlName="communicationtype" class="form-control">
+        <option value="">Preferred Communication Type</option>
+        <option value="email">Email</option>
+        <option value="google">Google Chat</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Learn More Today</button>
+
+  </form>
+
+</div>
